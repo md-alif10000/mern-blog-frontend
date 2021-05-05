@@ -1,0 +1,21 @@
+.loader_container{
+    @extend %fixed-position;
+    @extend %flex-center;
+    background: rgba(255,255,255,0.8);
+    &_item{
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        border-top:0.4rem dotted $primary;
+        border-left:0.4rem dotted $primary;
+        border-bottom:0.4rem dotted $primary;
+        border-right:0.4rem solid transparent;
+        animation: loader 0.7s infinite;
+        @keyframes loader {
+            100%{transform:rotate(360deg) ;}
+            
+        }
+    }
+  
+   
+}

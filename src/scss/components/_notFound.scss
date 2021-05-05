@@ -1,0 +1,18 @@
+.notFound{
+    width: 100%;
+    height: 100vh;
+    @extend %flex-center;
+    &_container{
+        &_h1{
+            font-size: 6rem;
+            color:$primary ;
+            text-decoration: line-through;
+        }
+        &_p{
+            margin-top: -1rem;
+            font-size: 1.5rem;
+
+        }
+    }
+ 
+}

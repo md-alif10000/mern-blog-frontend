@@ -1,0 +1,59 @@
+.pagination{
+    display: flex;
+    margin: 0 1rem ;
+    li:first-child{
+   
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+   
+    }
+    li:last-child{
+        border-top-right-radius: 0.6rem;
+        border-bottom-right-radius: 0.6rem;
+    }
+    li{
+        list-style-type: none;
+        display: block;
+        cursor: pointer;
+        padding: 1rem;
+        border: 1px solid $primary;
+
+        &:first-child{
+            border-left: 1px solid $primary;
+        }
+        a{
+            padding: 1rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            border-left: none;
+          
+        }
+       
+      
+    }
+    & :hover{
+        background: $primary;
+        color: $white;
+    }
+}
+.active{
+    background: $primary;
+    a{
+        color: $white;
+
+    }
+}
+.inactive{
+    color: $primary;
+
+    a{
+        color: $primary;
+    }
+ 
+}
+.next, .prev{
+  
+    a{  color: $primary;}
+
+    }
+ 

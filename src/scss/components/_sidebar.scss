@@ -1,0 +1,41 @@
+.sidebar{
+    background: $white;
+    width: 100%;
+    text-align: center;
+    & h3{
+       font-size: 2rem;
+    }
+    &_element{
+        width: 100%;
+
+        & a{
+            font-size: 1.4rem;
+            text-align: center;
+            padding: 1.5rem;
+            display: block;
+            color: $black;
+            font-weight: 500;
+            border-bottom: 1px solid $silverLight;
+            transition: .4s;
+            &:hover{
+                background: $primary;
+                color: $white;
+           
+            }
+        
+           
+        }
+    
+       
+    }
+    &_element:first-child{
+        border-top: 1px solid $silverLight;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+    }
+    &_element:last-child{
+        border-bottom-left-radius: 0.6rem;
+        border-bottom-right-radius: 0.6rem;
+
+    }
+}

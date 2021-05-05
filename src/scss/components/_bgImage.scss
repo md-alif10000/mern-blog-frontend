@@ -1,0 +1,15 @@
+.bgImage{
+    width: 100%;
+    height: 800px;
+    background-image: url("../../images/background.jpg");
+    background-size: cover;
+    background-color: red;
+    @include responsive(mobile){
+        width: 0;
+        height: 0;
+     }
+     @include responsive(tablet){
+         width: 0;
+         height: 0;
+      }
+}

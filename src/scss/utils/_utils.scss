@@ -1,0 +1,177 @@
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    @include responsive(mobile){
+        width: 100%;
+
+        padding: 0 2rem;
+    }
+    @include responsive(tablet){
+        width: 100%;
+
+        padding: 0 2rem;
+    }
+    @include responsive(laptop){
+        width: 100%;
+
+        padding: 0 2rem;
+    }
+ 
+
+}
+.mt-80{
+    margin-top: 8rem;
+}
+.mt-100{
+    margin-top: 10rem;
+}
+.m-15{
+    margin: 1.5rem;
+}
+.mb-15{
+    margin-bottom: 1.5rem;
+}
+.p-15{
+    padding: 1.5rem;
+}
+.px-15{
+    padding: 0 1.5rem;
+}
+.ml-minus-15{
+    margin-left: -1.5rem;
+}
+.mr-minus-15{
+    margin-right: -1.5rem;
+}
+
+.font-12{
+    font-size: 1.2rem;
+}
+.font-14{
+    font-size: 1.5rem;
+}
+.font-16{
+    font-size: 1.6rem;
+}
+.font-18{
+    font-size: 1.8rem;
+}
+.font-20{
+    font-size: 2rem;
+}
+
+.imagePreview{
+    width: 100%;
+    height: auto;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+.updateProfileImagePreview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+   
+    img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        border:2px dashed $primary;
+    }
+}
+
+.group{
+    margin-bottom:1.3rem ;
+    &_control{
+        width: 100%;
+        padding: 1.5rem;
+        border: none;
+        background: $silver;
+        outline: none;
+        border-bottom: 2px solid transparent;
+        transition: all 0.5s;
+        &:focus{
+            border-bottom:2px solid $green ;
+        }
+    }
+}
+
+.btn{
+    text-decoration: none;
+    outline: none;
+    color:$white;
+    height: 4rem;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+
+}
+.btn-default{
+    background-color: $green;
+}
+.btn-block{
+    width: 100%;
+    height: 5rem;
+}
+.form-heading{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.card{
+    background: $white;
+    padding: 1.5rem;
+    &_h3{
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+}
+label{
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+
+}
+#image{
+    display: none;
+}
+.image_label{
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    background: #b2bec3;
+    color: $white;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.icon{
+    font-size: 2rem;
+    color: $primary;
+    cursor: pointer;
+}
+.bg-white{
+    background: $white;
+
+}
+
+.text-primary{
+    color: $primary;
+}
+
+.flex{
+    display: flex;
+}
+
+.justify-sb{
+    display: flex;
+    justify-content: space-between;
+}
