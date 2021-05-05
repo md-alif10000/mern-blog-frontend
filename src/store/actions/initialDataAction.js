@@ -1,7 +1,5 @@
 
 import { userTypes } from "../types";
-import axios from "axios";
-import toast, { dispatch } from "react-hot-toast";
 import Api from "../Api";
 
 export const getInitialPosts = (pageNo) => {
