@@ -33,6 +33,7 @@ export const editPost = (form) => {
 
 		try {
 			const res = await Api.put("/post/edit-post", form);
+			console.log(res)
 
 			if (res.status == 201) {
 				toast.success("Your post have updated successfully.....!");
@@ -42,6 +43,7 @@ export const editPost = (form) => {
 				dispatch({ type: postTypes.REDIRECT_TRUE });
 			}
 		} catch (error) {
+			console.log(error)
 			const errors = error.response.data.errors;
 
 			dispatch({

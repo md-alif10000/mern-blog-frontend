@@ -94,7 +94,7 @@ export default function Dashboard(props) {
 										</span>
 									</div>
 									<div className='icons'>
-										<Link to={`/post/edit/${post._id}`}>
+										<Link to={`/post/edit/${post.slug}`}>
 											<BsPencilSquare className='icon' />
 										</Link>
 										<Link onClick={(e) => DeletePost(post._id)}>

@@ -36,7 +36,7 @@ function App() {
 						exact
 						component={ChangePassword}
 					/>
-					<PrivateRoute path='/post/edit/:id' exact component={Edit} />
+					<PrivateRoute path='/post/edit/:sl' exact component={Edit} />
 					<Route path='/:page?' exact component={Home} />
 					<Route path='/post/:slug' exact component={Details} />
 					<Route path='/home/:page?' exact component={Home} />

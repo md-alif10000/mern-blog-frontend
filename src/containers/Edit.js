@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet";
 import ReactQuill from "react-quill";
 import toast, { LoaderIcon, Toaster } from "react-hot-toast";
 import {
-	createPost,
 	editPost,
 	getSinglePost,
 } from "../store/actions/postAction";
@@ -15,7 +14,7 @@ import { fromString } from "html-to-text";
 import { generatePublicUrl } from "../urlConfig";
 
 export default function Edit(props) {
-	const _id = props.match.params.id;
+	const _slug = props.match.params.slug;
 
 	const { editErrors, singlepost, redirect, loading } = useSelector(
 		(state) => state.post
@@ -48,14 +47,14 @@ export default function Edit(props) {
 				return toast.error(`${ext} file is not supported`);
 			}
 		}
-		const img=singlepost.image
+		const img = singlepost.image;
 
 		const form = new FormData();
-		form.append("_id", _id);
+		form.append("_id", singlepost._id);
 		form.append("title", title);
 		form.append("body", value);
 		form.append("image", image);
-		form.append("img",img)
+		form.append("img", img);
 		form.append("slug", slug);
 		form.append("meta", meta);
 		form.append("user", user._id);
@@ -95,18 +94,18 @@ export default function Edit(props) {
 	};
 
 	useEffect(() => {
-		dispatch(getSinglePost(_id));
+		dispatch(getSinglePost(_slug));
 	}, []);
 	useEffect(() => {
 		if (editErrors && editErrors.length > 0) {
 			editErrors.map((err) => toast.error(`${err.msg}`));
-			dispatch({type:postTypes.SET_ERRORS_EMPTY})
+			dispatch({ type: postTypes.SET_ERRORS_EMPTY });
 		}
 		if (redirect) {
 			props.history.push("/dashboard");
 		}
-		if(loading){
-			<LoaderIcon/>
+		if (loading) {
+			<LoaderIcon />;
 		}
 		// if (!loading) {
 		// 	setTitle(singlepost.title);
@@ -115,26 +114,20 @@ export default function Edit(props) {
 		// 	// const { body } = singlepost;
 		// 	// setValue(body);
 		// }
-	}, [editErrors, redirect,loading]);
+	}, [editErrors, redirect, loading]);
 
+	useEffect(() => {
+		setTitle(singlepost.title);
+		setSlug(singlepost.slug);
+		setMeta(singlepost.meta);
+		const { body } = singlepost;
+		setValue(body);
+		console.log(body);
+	}, [singlepost]);
 
-
-
-		useEffect(() => {
-		
-				setTitle(singlepost.title);
-				setSlug(singlepost.slug);
-				setMeta(singlepost.meta);
-				const { body } = singlepost;
-				setValue(body);
-				console.log(body)
-
-		}, [singlepost]);
-
-if(loading){
-	return <Loader/>
-
-}
+	if (loading) {
+		return <Loader />;
+	}
 
 	return (
 		<>
@@ -206,7 +199,9 @@ if(loading){
 								<div className='card'>
 									<div className='group'>
 										<div className='imagePreview'>
-											{!imagePreview && <img src={generatePublicUrl(singlepost.image)} />}
+											{!imagePreview && (
+												<img src={generatePublicUrl(singlepost.image)} />
+											)}
 											{imagePreview && <img src={imagePreview} />}
 										</div>
 									</div>
