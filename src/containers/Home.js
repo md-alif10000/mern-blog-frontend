@@ -46,7 +46,7 @@ export default function Home(props) {
 													<div className='post_header '>
 														<div className='post_header_avater'>Md</div>
 														<div className='post_header_user'>
-															<span>username</span>
+															<span>{post.user.username}</span>
 															<span>
 																Published-{moment(post.updatedAt).fromNow()}
 															</span>
